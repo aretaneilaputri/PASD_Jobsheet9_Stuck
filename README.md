@@ -36,3 +36,27 @@ public int hitungTugas() {
     return top + 1;
 }
 6.	Commit dan push kode program ke Github
+
+
+2.2	Percobaan 2: Konversi Nilai Tugas ke Biner 
+Pertanyaan dan Jawaban:
+1.	Jelaskan alur kerja dari method konversiDesimalKeBiner!
+Jawaban:Method bekerja dengan langkah-langkah berikut:
+-Membuat object StackKonversi02 sebagai tempat menyimpan sisa bagi
+-Melakukan perulangan do-while — nilai kode dibagi 2, sisa pembagiannya (kode % 2) di-push ke stack, lalu kode diperbarui menjadi kode / 2. Diulang sampai kode bernilai 0
+-Setelah perulangan selesai, sisa-sisa bagi tadi dikeluarkan satu per satu menggunakan pop() dan dicetak — karena stack bersifat LIFO, hasilnya otomatis terbalik menjadi urutan biner yang benar
+Contoh nilai 87:
+87 % 2 = 1, 87 / 2 = 43
+43 % 2 = 1, 43 / 2 = 21
+21 % 2 = 1, 21 / 2 = 10
+10 % 2 = 0, 10 / 2 = 5
+5 % 2 = 1, 5 / 2 = 2
+2 % 2 = 0, 2 / 2 = 1
+1 % 2 = 1, 1 / 2 = 0 → stop
+Stack di-pop → 1010111
+2. Pada method konversiDesimalKeBiner, ubah kondisi perulangan menjadi while (kode != 0), bagaimana hasilnya? Jelaskan alasannya!
+Jawaban:Jika kondisi diubah ke while (kode != 0):
+Hasilnya sama untuk nilai positif, tapi ada perbedaan penting:
+do-while → blok kode dijalankan minimal 1 kali meskipun kode = 0
+while (kode != 0) → jika nilai yang dimasukkan adalah 0, perulangan tidak akan berjalan sama sekali, sehingga tidak ada yang di-push ke stack dan output akan kosong/blank. Jadi jika input nilainya 0, dengan do-while outputnya 0, sedangkan dengan while (kode != 0) outputnya kosong.
+
