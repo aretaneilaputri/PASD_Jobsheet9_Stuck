@@ -12,8 +12,8 @@ public class MahasiswaDemo02 {
             System.out.println("2. Menilai Tugas");
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
-            System.out.println("5. Melihat Tugas Terbawah");   // PERTANYAAN 4
-            System.out.println("6. Hitung Jumlah Tugas");      // PERTANYAAN 5
+            System.out.println("5. Melihat Tugas Terbawah");
+            System.out.println("6. Hitung Jumlah Tugas");
             System.out.print("Pilih: ");
             pilih = scan.nextInt();
             scan.nextLine();
@@ -40,6 +40,7 @@ public class MahasiswaDemo02 {
                         scan.nextLine();
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, nilai);
+                        stack.konversiDesimalKeBiner(nilai); // Percobaan 2
                     }
                     break;
 
@@ -56,7 +57,6 @@ public class MahasiswaDemo02 {
                     stack.print();
                     break;
 
-                // PERTANYAAN 4: lihat tugas terbawah
                 case 5:
                     Mahasiswa02 bawah = stack.peekBottom();
                     if (bawah != null) {
@@ -64,7 +64,6 @@ public class MahasiswaDemo02 {
                     }
                     break;
 
-                // PERTANYAAN 5: hitung jumlah tugas
                 case 6:
                     System.out.println("Jumlah tugas yang sudah dikumpulkan: " + stack.hitungTugas());
                     break;

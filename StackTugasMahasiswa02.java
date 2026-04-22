@@ -54,7 +54,7 @@ public class StackTugasMahasiswa02 {
         }
     }
 
-      public Mahasiswa02 peekBottom() {
+    public Mahasiswa02 peekBottom() {
         if (!isEmpty()) {
             return stack[0];
         } else {
@@ -63,10 +63,25 @@ public class StackTugasMahasiswa02 {
         }
     }
 
-     public int hitungTugas() {
+    public int hitungTugas() {
         return top + 1;
     }
 
+    // PERCOBAAN 2: konversi nilai ke biner
+    public void konversiDesimalKeBiner(int kode) {
+        StackKonversi02 stackKonversi = new StackKonversi02();
+
+        do {
+            stackKonversi.push(kode % 2);
+            kode = kode / 2;
+        } while (kode > 0);
+
+        System.out.print("Nilai Biner Tugas: ");
+        while (!stackKonversi.isEmpty()) {
+            System.out.print(stackKonversi.pop());
+        }
+        System.out.println();
+    }
 
     public void print() {
         for (int i = 0; i <= top; i++) {
@@ -74,4 +89,4 @@ public class StackTugasMahasiswa02 {
         }
         System.out.println(" ");
     }
-} 
+}
